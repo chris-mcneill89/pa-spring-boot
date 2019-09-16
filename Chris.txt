@@ -1,12 +1,13 @@
 Lets get started writing some awesome spring boot applications
 
-Twinkle twinkle little star
+Twinkle twinkle little star,
 
-how I wonder what you are
+How I wonder what you are,
 
-Up above the world so high
+Up above the world so high,
 
-like a diamond in the sky!
+Like a diamond in the sky!
 
-The next step is to add capital letters to the start of my sentences!
+The Capitals were added and commas appropriately
 
+Now I will create a new page and attempt to get it linked and working
