@@ -13,25 +13,44 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-dark">
+
+  <!-- Links -->
+  <ul class="navbar-nav" font-size="16px">
+    <li class="nav-item">
+      <a class="nav-link text-warning" href="#">Link 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-warning" href="#">Link 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-warning" href="#">Link 3</a>
+    </li>
+  </ul>
+
+</nav>
 <div class="jumbotron text-center">
-  <h1 class="display-2"> Welcome</h1>
-  <h1><small>Titanic Visitor Centre</small></h1>
+  <h1 class="display-2 text-danger"> Welcome</h1>
+  <h1><small class="bg-dark text-warning">Titanic Visitor Centre</small></h1>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h3>Past</h3>
-      <img src="/images/oldLady" class="rounded" alt="Old Lady">
-      <p>Lorem ipsum dolor..</p>
+      <h3 class="text-center">Past</h3>
+      <img class="img-fluid mx-auto d-block rounded"  src="/images/wreck.jpg" alt="Ship Wreck" width="300" height="300">
+      <p class="text-center lead">Lorem ipsum dolor..</p>
     </div>
     <div class="col-sm-4">
-      <h3>Present</h3>
-      <p>Lorem ipsum dolor..</p>
+      <h3 class="text-center">Present</h3>
+      <img class="img-fluid mx-auto d-block rounded"  src="/images/centre.jpg" alt="Visitor Centre" width="300" height="300">
+      <p class="text-center lead">Lorem ipsum dolor..</p>
     </div>
     <div class="col-sm-4">
-      <h3>Future</h3>
-      <p>Lorem ipsum dolor..</p>
+      <h3 class="text-center">Future</h3>
+      <img class="img-fluid mx-auto d-block rounded"  src="/images/titanic.jpg" alt="Titanic 2 Ship" width="300" height="300">
+      <p class="text-center lead">Lorem ipsum dolor..</p>
     </div>
   </div>
 </div>
