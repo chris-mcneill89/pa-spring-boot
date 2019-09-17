@@ -1,45 +1,31 @@
 package uk.ac.belfastmet.toystory.contoller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @RequestMapping()
-
 public class HomeController {
 	
 	@GetMapping("/")
 	public String home() {
-		return "Home Page";
-	}
-	@GetMapping("/woody")
-	public String woody() {
-		return "Woody was played by Tom Hanks";
-	}
-	@GetMapping("/buzz")
-	public String buzz() {
-		return "Buzz was played by Tim Allen";
+		return "index";
 	}
 	
-	@GetMapping("/mrpotato")
-	public String mrPotato() {
-		return "Mr Potato Head was played by Don Rickles";
+	@GetMapping("/movies")
+	public String movies() {
+		return "This is a list of movies";
 	}
 	
-	@GetMapping("/mrspotato")
-	public String mrsPotato() {
-		return "Mrs Potato Head was played by Estelle Harris";
+	@GetMapping("/contact")
+	public String contact() {
+		return "Contact Page";
 	}
 	
-	@GetMapping("/rex")
-	public String rex() {
-		return "Rex was played by Wallace Shawn";
+	@GetMapping("/about")
+	public String about() {
+		return "About Us Page";
 	}
 	
-	@GetMapping("/slinky")
-	public String slinky() {
-		return "Slinky was played by Jim Varney";
-	}
-
 }
