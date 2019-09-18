@@ -8,14 +8,11 @@
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
-	<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 	<!-- Custom Styles  -->
 
-<title></title>
+<title th:text="${pageTitle}"></title>
 </head>
 
 <body>
@@ -25,17 +22,17 @@
       <a class="nav-link" href="/">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/Page2">Page2</a>
+      <a class="nav-link" href="/disney">Disney</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/Page3">Page3</a>
+      <a class="nav-link" href="/tolkien">Tolkien</a>
     </li>
   </ul>
 </nav>
 <div class="jumbotron text-center">
 
-<h1>This page is about</h1>
-<h2></h2>
+<h1>Tolkien Page</h1>
+<h2 th:text="${numberOfDwarfs}"></h2>
 <br />
 
 </div>
@@ -43,7 +40,23 @@
 
 <div class="container">
 
-<p>This site will contain information about children's movies…
+<p>This site will contain information about tolkien dwarfs</p>
+
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Name</th>
+<th>Picture</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="dwarf: ${dwarfs}">
+<td th:text="${dwarf.name}">Happy</td>
+<td><img src="../static/img/Happy.png" th:src="@{/img/} + ${dwarf.image}"></img></td>
+</tr>
+</tbody>
+
+</table>
 
 </div>
 
