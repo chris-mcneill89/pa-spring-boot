@@ -19,7 +19,7 @@ public class ManUService {
 
 		// add players
 		this.players.add(new Player("Marcus Rashford", "Striker", 22, "rashford.jpg"));
-		this.players.add(new Player("Harry MAguire", "Defender", 27, "maguire.jpg"));
+		this.players.add(new Player("Harry Maguire", "Defender", 27, "maguire.jpg"));
 		this.players.add(new Player("Paul Pogba", "Midfielder", 26, "pogba.jpg"));
 		this.players.add(new Player("Anthony Martial", "Forward", 24, "martial.jpg"));
 		this.players.add(new Player("Luke Shaw", "Full Back", 26, "shaw.jpg"));

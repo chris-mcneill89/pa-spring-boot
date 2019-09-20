@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import uk.ac.belfastmet.manu.service.ManUService;
 
@@ -11,7 +12,7 @@ import uk.ac.belfastmet.manu.service.ManUService;
 @RequestMapping()
 public class ManUController {
 	
-	@GetMapping()
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String homePage(Model model) {
 		
 		model.addAttribute("pageTitle", "Man United Home");
@@ -19,7 +20,7 @@ public class ManUController {
 		return "index";
 	}
 	
-	@GetMapping("/players")
+	@RequestMapping(value = "/players", method = RequestMethod.GET)
 	public String playersPage(Model model) {
 		
 		ManUService manUService = new ManUService();
@@ -29,7 +30,7 @@ public class ManUController {
 		return "players";
 	}
 	
-	@GetMapping("/staff")
+	@RequestMapping(value = "/staff", method = RequestMethod.GET)
 	public String staffPage(Model model) {
 		
 		ManUService manUService = new ManUService();
