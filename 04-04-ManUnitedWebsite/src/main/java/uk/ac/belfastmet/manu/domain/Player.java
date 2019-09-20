@@ -47,4 +47,8 @@ public class Player {
 		this.image = image;
 	}
 	
+	public String toString() {
+		return "Name: " + name + ", Position: " + position + ", Age: " + age + ", Image: " + image;
+	}
+	
 }
