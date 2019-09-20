@@ -18,7 +18,8 @@ public class ManUService {
 	Logger logger = LoggerFactory.getLogger(ManUController.class);
 	ArrayList<Player> players = new ArrayList<Player>();
 	ArrayList<Staff> staff = new ArrayList<Staff>();
-
+	
+	//base arrylist of players
 	public ArrayList<Player> getPlayers() {
 
 		this.players = new ArrayList<Player>();
@@ -44,7 +45,8 @@ public class ManUService {
 
 		return this.players;
 	}
-
+	
+	//base arraylist of staff
 	public ArrayList<Staff> getStaff() {
 
 		this.staff = new ArrayList<Staff>();
