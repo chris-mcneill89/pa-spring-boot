@@ -19,11 +19,11 @@ public class ToDoController {
 	Logger logger = LoggerFactory.getLogger(ToDoController.class);
 	
 	/**
-	 * this method requests index page
+	 * this method requests index page and the getTasks method from service
 	 * @param single model object
 	 * @return index html file
 	 */
-	@RequestMapping(value="", method= RequestMethod.GET)
+	@RequestMapping(value="", method = RequestMethod.GET)
 	public String indexPage(Model model) {
 		ToDoService todoService = new ToDoService();
 		logger.info("Controller- I have reached the home page");
@@ -34,6 +34,39 @@ public class ToDoController {
 		logger.info("Controller - Tasks arraylist contents returned to controller");
 		
 		return "index";
+	}
+	
+	/**
+	 * this method requests the login page
+	 * @param single model object
+	 * @return login html file
+	 */
+	@RequestMapping(value="/login", method= RequestMethod.GET)
+	public String loginPage(Model model) {
+		ToDoService todoService = new ToDoService();
+		logger.info("Controller - I have reached the login page");
+		model.addAttribute("pageTitle", "ToDO App Login");
+		logger.info("Controller - the page title is set to ToDo App Login");
+		
+		return "login";
+	}
+	
+	/**
+	 * this method requests completedTasks page and the getCompletedTasks method from service
+	 * @param single model object
+	 * @return index html file
+	 */
+	@RequestMapping(value="/complete", method = RequestMethod.GET)
+	public String completePage(Model model) {
+		ToDoService todoService = new ToDoService();
+		logger.info("Controller- I have reached the complete page");
+		model.addAttribute("pageTitle", "ToDo App Complete");
+		logger.info("Controller - the page title is set to ToDo App Complete");
+		logger.info("Controller- call getCompleteTasks method in service");
+		model.addAttribute("tasks", todoService.getCompleteTasks());
+		logger.info("Controller - Complete asks arraylist contents returned to controller");
+		
+		return "complete";
 	}
 
 }
