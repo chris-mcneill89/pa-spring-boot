@@ -18,8 +18,7 @@ public class ManUService {
 	Logger logger = LoggerFactory.getLogger(ManUController.class);
 	ArrayList<Player> players = new ArrayList<Player>();
 	ArrayList<Staff> staff = new ArrayList<Staff>();
-	
-	//base arrylist of players
+
 	public ArrayList<Player> getPlayers() {
 
 		this.players = new ArrayList<Player>();
@@ -27,7 +26,7 @@ public class ManUService {
 
 		// add players
 		logger.info("Service - Begin Players Arraylist population");
-		
+
 		this.players.add(new Player("Marcus Rashford", "Striker", 22, "rashford.jpg"));
 		logger.info(players.toString());
 		this.players.add(new Player("Harry Maguire", "Defender", 27, "maguire.jpg"));
@@ -39,14 +38,14 @@ public class ManUService {
 		this.players.add(new Player("Scott McTominay", "Midefielder", 23, "mctominay.jpg"));
 		this.players.add(new Player("David de Gea", "Goalkeeper", 27, "degea.jpg"));
 		this.players.add(new Player("Jesse Lingard", "Forward", 28, "lingard.jpg"));
-		
+
 		logger.info(players.toString());
 		logger.info("Service - Arraylist populated and returned");
 
 		return this.players;
 	}
-	
-	//base arraylist of staff
+
+	// base arraylist of staff
 	public ArrayList<Staff> getStaff() {
 
 		this.staff = new ArrayList<Staff>();
@@ -54,7 +53,7 @@ public class ManUService {
 
 		// add players
 		logger.info("Service - Begin Staff Arraylist population");
-		
+
 		this.staff.add(new Staff("Ole Gunnar Solskjaer", "Manager", 46, "ole.jpg"));
 		this.staff.add(new Staff("Michael Carrick", "Assistant Manager", 38, "carrick.jpg"));
 		this.staff.add(new Staff("Mike Phelan", "Assistant Manager", 56, "phelan.jpg"));
@@ -65,7 +64,7 @@ public class ManUService {
 		this.staff.add(new Staff("Ed Woodward", "Vice-Chairman", 47, "woodward.jpg"));
 		this.staff.add(new Staff("Sir Bobby Charlton", "Board Member", 81, "charlton.jpg"));
 		this.staff.add(new Staff("Sir Alex Ferguson", "Board Member", 60, "ferguson.jpg"));
-		
+
 		logger.info("Service - Staff Arraylist populated and returned");
 
 		return this.staff;

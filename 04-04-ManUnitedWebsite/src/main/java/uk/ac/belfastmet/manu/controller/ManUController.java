@@ -17,6 +17,11 @@ public class ManUController {
 	//logger class object for logging info
 	Logger logger = LoggerFactory.getLogger(ManUController.class);
 	
+	/**
+	 * this method requests index page
+	 * @param single model object
+	 * @return index html file
+	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String homePage(Model model) {
 		logger.info("Controller- I have reached the home page");
@@ -26,6 +31,11 @@ public class ManUController {
 		return "index";
 	}
 	
+	/**
+	 * this method requests players page and requests getPlayers method from service
+	 * @param single model object
+	 * @return players html file
+	 */
 	@RequestMapping(value = "/players", method = RequestMethod.GET)
 	public String playersPage(Model model) {
 		
@@ -39,6 +49,11 @@ public class ManUController {
 		return "players";
 	}
 	
+	/**
+	 * method requesting staff page and invokes getStaff method from service
+	 * @param single model object
+	 * @return staff html file
+	 */
 	@RequestMapping(value = "/staff", method = RequestMethod.GET)
 	public String staffPage(Model model) {
 		

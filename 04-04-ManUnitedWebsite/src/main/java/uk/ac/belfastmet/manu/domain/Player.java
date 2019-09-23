@@ -47,6 +47,7 @@ public class Player {
 		this.image = image;
 	}
 	
+	//override toString method for debugging and checking
 	public String toString() {
 		return "Name: " + name + ", Position: " + position + ", Age: " + age + ", Image: " + image;
 	}
