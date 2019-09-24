@@ -1,11 +1,14 @@
 package uk.ac.belfastmet.todo.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import uk.ac.belfastmet.todo.controller.ToDoController;
 import uk.ac.belfastmet.todo.domain.Task;
+import uk.ac.belfastmet.todo.repository.TaskRepository;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +20,9 @@ public class ToDoService {
 	Logger logger = LoggerFactory.getLogger(ToDoController.class);
 	ArrayList<Task> tasks = new ArrayList<Task>();
 	ArrayList<Task> completeTasks = new ArrayList<Task>();
+
+	@Autowired
+	private TaskRepository taskRepository;
 
 	/**
 	 * method to create an arraylist of task objects
@@ -47,6 +53,7 @@ public class ToDoService {
 
 	/**
 	 * method to create an arraylist of completed tasks
+	 * 
 	 * @return an arraylist of completed tasks
 	 */
 	public ArrayList<Task> getCompleteTasks() {
@@ -66,10 +73,23 @@ public class ToDoService {
 		}
 
 		logger.info(completeTasks.toString());
-		//logger.debug("This arraylist contains " + this.completeTasks.size() + "tasks");
+		// logger.debug("This arraylist contains " + this.completeTasks.size() +
+		// "tasks");
 		logger.info("Service - Arraylist populated and returned");
 
 		return this.completeTasks;
+	}
+
+	public Iterator<Task> getNumberOfTasks() {
+		logger.info("Reached getNumberOfTasks method");
+		logger.info("# of tasks: {}", taskRepository.count());
+		
+		Iterable <Task> tasks = taskRepository.findAll();
+		Iterator <Task> iterator = tasks.iterator();
+		while (iterator.hasNext()){
+		logger.info("{}", iterator.next().toString());
+		}
+		return iterator;
 	}
 
 }

@@ -1,5 +1,6 @@
 package uk.ac.belfastmet.todo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,9 @@ public class ToDoController {
 	// logger class object for logging info
 	Logger logger = LoggerFactory.getLogger(ToDoController.class);
 	
+	@Autowired
+	private ToDoService todoService;
+	
 	/**
 	 * this method requests index page and the getTasks method from service
 	 * @param single model object
@@ -25,13 +29,16 @@ public class ToDoController {
 	 */
 	@RequestMapping(value="", method = RequestMethod.GET)
 	public String indexPage(Model model) {
-		ToDoService todoService = new ToDoService();
+		//ToDoService todoService = new ToDoService();
 		logger.info("Controller- I have reached the home page");
 		model.addAttribute("pageTitle", "ToDo App Home");
-		logger.info("Controller - the page title is set to ToDo App Home");
-		logger.info("Controller- call getTasks method in service");
-		model.addAttribute("tasks", todoService.getTasks());
-		logger.info("Controller - Tasks arraylist contents returned to controller");
+		/*
+		 * logger.info("Controller - the page title is set to ToDo App Home");
+		 * logger.info("Controller- call getTasks method in service");
+		 * model.addAttribute("tasks", todoService.getTasks());
+		 * logger.info("Controller - Tasks arraylist contents returned to controller");
+		 */
+		todoService.getNumberOfTasks();
 		
 		return "index";
 	}
@@ -43,7 +50,7 @@ public class ToDoController {
 	 */
 	@RequestMapping(value="/login", method= RequestMethod.GET)
 	public String loginPage(Model model) {
-		ToDoService todoService = new ToDoService();
+		//ToDoService todoService = new ToDoService();
 		logger.info("Controller - I have reached the login page");
 		model.addAttribute("pageTitle", "ToDO App Login");
 		logger.info("Controller - the page title is set to ToDo App Login");
@@ -58,13 +65,16 @@ public class ToDoController {
 	 */
 	@RequestMapping(value="/complete", method = RequestMethod.GET)
 	public String completePage(Model model) {
-		ToDoService todoService = new ToDoService();
+		//ToDoService todoService = new ToDoService();
 		logger.info("Controller- I have reached the complete page");
 		model.addAttribute("pageTitle", "ToDo App Complete");
 		logger.info("Controller - the page title is set to ToDo App Complete");
-		logger.info("Controller- call getCompleteTasks method in service");
-		model.addAttribute("tasks", todoService.getCompleteTasks());
-		logger.info("Controller - Complete asks arraylist contents returned to controller");
+		/*
+		 * logger.info("Controller- call getCompleteTasks method in service");
+		 * model.addAttribute("tasks", todoService.getCompleteTasks()); logger.
+		 * info("Controller - Complete asks arraylist contents returned to controller")
+		 */;
+		 model.addAttribute("tasks", todoService.getNumberOfTasks());
 		
 		return "complete";
 	}
