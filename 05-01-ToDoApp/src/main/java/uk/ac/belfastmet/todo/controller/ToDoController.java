@@ -28,23 +28,20 @@ public class ToDoController {
 
 	/**
 	 * this method requests index page and the getTasks method from service
-	 * currently attempting to access the getNumberOfTasks method from service
 	 * 
 	 * @param single model object
 	 * @return index html file
 	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String indexPage(Model model) {
-		// ToDoService todoService = new ToDoService();
+
 		logger.info("Controller- I have reached the home page");
 		model.addAttribute("pageTitle", "ToDo App Home");
-		/*
-		 * logger.info("Controller - the page title is set to ToDo App Home");
-		 * logger.info("Controller- call getTasks method in service");
-		 * model.addAttribute("tasks", todoService.getTasks());
-		 * logger.info("Controller - Tasks arraylist contents returned to controller");
-		 */
+		logger.info("Call getNumberofTasks method from Service");
 		todoService.getNumberOfTasks();
+		logger.info("Call getTasks method from Service");
+		model.addAttribute("tasks", todoService.getTasks());
+		logger.info("Controller - Tasks arraylist contents returned to controller");
 
 		return "index";
 	}
@@ -57,7 +54,7 @@ public class ToDoController {
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage(Model model) {
-		// ToDoService todoService = new ToDoService();
+
 		logger.info("Controller - I have reached the login page");
 		model.addAttribute("pageTitle", "ToDO App Login");
 		logger.info("Controller - the page title is set to ToDo App Login");
@@ -66,29 +63,43 @@ public class ToDoController {
 	}
 
 	/**
-	 * this method requests completedTasks page and the getCompletedTasks method
-	 * from service currently attempting to access the getNumberOfTasks method from
-	 * service
+	 * this method requests complete page and the getCompletedTasks method
 	 * 
 	 * @param single model object
 	 * @return complete html file
 	 */
 	@RequestMapping(value = "/complete", method = RequestMethod.GET)
 	public String completePage(Model model) {
-		// ToDoService todoService = new ToDoService();
+
 		logger.info("Controller- I have reached the complete page");
 		model.addAttribute("pageTitle", "ToDo App Complete");
 		logger.info("Controller - the page title is set to ToDo App Complete");
-		
-		// consider commenting hy this code is commented out is it to be deleted or worked on later?
-		/*
-		 * logger.info("Controller- call getCompleteTasks method in service");
-		 * model.addAttribute("tasks", todoService.getCompleteTasks()); logger.
-		 * info("Controller - Complete asks arraylist contents returned to controller")
-		 */;
-		model.addAttribute("tasks", todoService.getNumberOfTasks());
+
+		logger.info("Controller- call getCompleteTasks method in service");
+		model.addAttribute("tasks", todoService.getCompleteTasks());
+		logger.info("Controller - Complete asks arraylist contents returned to controller");
 
 		return "complete";
+	}
+	
+	/**
+	 * this method requests incomplete page and the getIncompletedTasks method
+	 * 
+	 * @param model
+	 * @return incomplete html file
+	 */
+	@RequestMapping(value = "/incomplete", method = RequestMethod.GET)
+	public String incompletePage(Model model) {
+
+		logger.info("Controller- I have reached the incomplete page");
+		model.addAttribute("pageTitle", "ToDo App Incomplete");
+		logger.info("Controller - the page title is set to ToDo App inComplete");
+
+		logger.info("Controller- call getinCompleteTasks method in service");
+		model.addAttribute("tasks", todoService.getIncompleteTasks());
+		logger.info("Controller - Incomplete asks arraylist contents returned to controller");
+
+		return "incomplete";
 	}
 
 }

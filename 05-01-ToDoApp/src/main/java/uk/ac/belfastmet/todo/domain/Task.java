@@ -67,7 +67,7 @@ public class Task {
 	 * get personResponsible property
 	 * @return personResponsible
 	 */
-	@Column(name = "personResponsible") // database mapping
+	@Column(name = "personresponsible") // database mapping
 	public String getPersonResponsible() {
 		return personResponsible;
 	}
@@ -133,9 +133,9 @@ public class Task {
 
 	/**
 	 * get lengthMinutes property
-	 * @return lengthMinutes
+	 * @return lengthinutes
 	 */
-	@Column(name = "lengthMinutes") // database mapping
+	@Column(name = "lengthminutes") // database mapping
 	public int getLengthMinutes() {
 		return lengthMinutes;
 	}
