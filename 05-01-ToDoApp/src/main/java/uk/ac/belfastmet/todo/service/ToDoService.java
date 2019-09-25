@@ -13,6 +13,11 @@ import java.util.Iterator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 
+ * @author MCN17134884
+ *
+ */
 @Service
 public class ToDoService {
 
@@ -80,14 +85,19 @@ public class ToDoService {
 		return this.completeTasks;
 	}
 
+	/**
+	 * method which retrieves all tasks in database
+	 * 
+	 * @return an iterator containing all task records
+	 */
 	public Iterator<Task> getNumberOfTasks() {
 		logger.info("Reached getNumberOfTasks method");
 		logger.info("# of tasks: {}", taskRepository.count());
-		
-		Iterable <Task> tasks = taskRepository.findAll();
-		Iterator <Task> iterator = tasks.iterator();
-		while (iterator.hasNext()){
-		logger.info("{}", iterator.next().toString());
+
+		Iterable<Task> tasks = taskRepository.findAll();
+		Iterator<Task> iterator = tasks.iterator();
+		while (iterator.hasNext()) {
+			logger.info("{}", iterator.next().toString());
 		}
 		return iterator;
 	}

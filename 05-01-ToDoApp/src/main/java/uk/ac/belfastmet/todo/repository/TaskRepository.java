@@ -5,7 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import uk.ac.belfastmet.todo.domain.Task;
 
+/**
+ * repository interface that communicates with database
+ * @author MCN17134884
+ *
+ */
 @Repository
-public interface TaskRepository extends CrudRepository<Task, Long>{
+public interface TaskRepository extends CrudRepository<Task, Long> {
 
 }
