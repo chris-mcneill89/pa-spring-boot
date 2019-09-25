@@ -1,5 +1,6 @@
 package uk.ac.belfastmet.manu.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,11 +12,19 @@ import org.slf4j.LoggerFactory;
 
 import uk.ac.belfastmet.manu.service.ManUService;
 
+/**
+ * 
+ * @author MCN17134884
+ *
+ */
 @Controller
 @RequestMapping()
 public class ManUController {
 	//logger class object for logging info
 	Logger logger = LoggerFactory.getLogger(ManUController.class);
+	
+	@Autowired
+	private ManUService manUService;
 	
 	/**
 	 * this method requests index page
@@ -40,7 +49,7 @@ public class ManUController {
 	public String playersPage(Model model) {
 		
 		logger.info("Controller - I have reached the players page");
-		ManUService manUService = new ManUService();
+		//ManUService manUService = new ManUService();
 		model.addAttribute("pageTitle", "Man United Players");
 		logger.info("Controller - the page title is set to Man United Players");
 		logger.info("Controller- call getPlayers method in service");
@@ -58,7 +67,7 @@ public class ManUController {
 	public String staffPage(Model model) {
 		
 		logger.info("Controller - I have reached the staff page");
-		ManUService manUService = new ManUService();
+		//ManUService manUService = new ManUService();
 		model.addAttribute("pageTitle", "Man United Staff");
 		logger.info("Controller - the page title is set to Man United Staff");
 		logger.info("Controller- call getStaff method in service");

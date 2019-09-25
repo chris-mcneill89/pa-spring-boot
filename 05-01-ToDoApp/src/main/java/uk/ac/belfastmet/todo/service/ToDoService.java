@@ -103,6 +103,10 @@ public class ToDoService {
 		return this.completeTasks;
 	}
 
+	/**
+	 * method to create an arraylist of completed tasks from database
+	 * @return an arraylist of incomplete tasks
+	 */
 	public ArrayList<Task> getIncompleteTasks() {
 
 		this.incompleteTasks = new ArrayList<Task>();
